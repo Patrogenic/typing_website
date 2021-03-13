@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--For the icon put a keyboard -->
+		<title>Typing Test - Intermediate Tier 1 - Smooth Typing</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="assets/css/main_style.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/typing_style.css">
+		<style>
+			.main-content{
+				height: 500px;
+				background-color: #B9DEEB;
+			}
+			.text-container{
+				border: 1px black solid;
+				width: 748px;
+			}
+			.test-heading{
+				text-align: center;
+			}
+		</style>
+	</head>
+		<body>
+		<div class="banner">
+			<div class="logo">
+				<img src="assets\logo\Smooth Typing Logo 3 Orange.jpg" alt="Smooth Typing Logo" width="150">
+			</div>
+		</div>
+		<div class="navbar">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="">Lessons</a></li>
+				<li><a href="test.html">Test</a></li>
+				<li><a href="submit.html">Submit</a></li>
+				<li><a href="">Practice</a></li>
+				<li><a href="">About</a></li>
+			</ul>
+		</div>
+		<div class="main-content">
+			<h1 class="test-heading">Typing Test - Intermediate Tier 2</h1>
+			<!--Typing Test-->
+			<div class="text-container" id="textContainer" onkeydown="userTyping">
+				<div class="sub-text-container">
+					<span id="textTyped" class="typed"></span><!--
+				--><span id="currentChar" class="current"></span><!--
+				--><span id="textToType"></span>
+				</div>
+			</div>
+			<!--Typing Test Finish Screen-->
+			<div id="finish" class="finish">
+				<p id="fin-heading">Finish!</p>
+				<!--Smooth -Earn Smoothies for accuracy? -May as well as have a smoothie logo? -->
+				<div class="results-container">
+					<span id="time" class="results">Time: 4 sec</span>
+					<span id="accuracy" class="results">Accuracy: 100% </span>
+					<span id="wpm" class="results">Speed: 71wpm</span>
+				</div>
+				<hr>
+				<div class="options" onclick="location.href='test.html'">
+					<span>< Tests</span>
+				</div>
+				<div class="options" onclick="retry()">
+					<span>Retry?</span>
+				</div>
+				<div class="options">
+					<span>Next ><span>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script language="javascript" type="text/javascript" src="assets/js/typing_logic.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/js/test_intermediate.js"></script>
+	<script>
+		var rndNumWords = 0;
+		var rndWord = "";
+		var rndNumChars = 0;
+		var rndIntmedTxt = "";
+		var capChar = "";
+		
+		for(var i = 0; i < 60; i++){
+			rndNumChars = Math.floor((Math.random() * 10) + 1)
+			rndNumWords = Math.floor((Math.random() * 100) + 1);
+			
+			rndWord = intmedWords[rndNumWords];
+			
+			if(rndNumChars == 1){
+				capChar = rndWord.substring(0, 1).toUpperCase();
+				rndWord = capChar + rndWord.substring(1, rndWord.length)
+			}else if(rndNumChars == 2){
+				rndWord += ".";
+			}else if(rndNumChars == 3){
+				rndWord += ",";
+			}else if (rndNumChars == 4){
+				//rndWord = '"' + rndWord + '"'; //Too common
+			} //Don't forget numbers
+			
+			rndIntmedTxt += rndWord + " ";
+		}
+		displayTxt();
+	</script>
+</html>

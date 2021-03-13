@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--For the icon put a keyboard -->
+		<title>Typing Test - Beginner - Smooth Typing</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="assets/css/main_style.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/typing_style.css">
+		<style>
+			.main-content{
+				height: 500px;
+				background-color: #B9DEEB;
+			}
+			.text-container{
+				border: 1px black solid;
+				width: 748px;
+			}
+			.test-heading{
+				text-align: center;
+			}
+			.btn{
+				background-color: #5CCF23;
+				margin-top: 27px;
+				margin-left: 40px;
+				position: absolute;
+			}
+		</style>
+	</head>
+		<body>
+		<div class="banner">
+			<div class="logo">
+				<img src="assets\logo\Smooth Typing Logo 3 Orange.jpg" alt="Smooth Typing Logo" width="150">
+			</div>
+		</div>
+		<div class="navbar">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="">Lessons</a></li>
+				<li><a href="test.html">Test</a></li>
+				<li><a href="submit.html">Submit</a></li>
+				<li><a href="">Practice</a></li>
+				<li><a href="">About</a></li>
+			</ul>
+		</div>
+		<div class="main-content">
+			<!--Definitely a test for anyone and not just beginners. Even seasoned typists can benefit from this test.
+				Practice your raw typing speed with this test. Being able to type these common words quick will prove to be beneficial.-->
+			<!--<div class="btn" onclick="location.href='test.html'">< Back to Tests</div>
+			-->
+			<h1 class="test-heading">Typing Test - Beginner</h1>
+			<!--Typing Test-->
+			<!--Add an element just above the first character to tell the user to start typing-->
+			<div class="text-container" id="textContainer" onkeydown="userTyping">
+				<div class="sub-text-container">
+					<span id="textTyped" class="typed"></span><!--
+				--><span id="currentChar" class="current"></span><!--
+				--><span id="textToType">Egocentric: self-centered,</span>
+				</div>
+			</div>
+			<!--Typing Test Finish Screen-->
+			<div id="finish" class="finish">
+				<p id="fin-heading">Finish!</p>
+				<!--Smooth -Earn Smoothies for accuracy? -May as well as have a smoothie logo? -->
+				<div class="results-container">
+					<span id="time" class="results">Time: 4 sec</span>
+					<span id="accuracy" class="results">Accuracy: 100% </span>
+					<span id="wpm" class="results">Speed: 71wpm</span>
+				</div>
+				<hr>
+				<div class="options" onclick="location.href='test.html'">
+					<span>< Tests</span>
+				</div>
+				<div class="options" onclick="retry()">
+					<span>Retry?</span>
+				</div>
+				<div class="options">
+					<span>Next ><span>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script language="javascript" type="text/javascript" src="assets/js/typing_logic.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/js/test_easy.js"></script>
+</html>

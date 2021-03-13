@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--For the icon put a keyboard -->
+		<title>Typing Tests - Smooth Typing</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="assets/css/main_style.css">
+		<style>
+			h2{
+				text-align: center;
+			}
+			/*
+			html style checkboxes
+			http://code.stephenmorley.org/html-and-css/styling-checkboxes-and-radio-buttons/
+			*/
+			input[type=checkbox]:not(old) + label,
+			input[type=radio   ]:not(old) + label{
+				display      : inline-block;
+				margin-left  : -2em;
+				line-height  : 1.5em;
+			}
+			#heading{
+				font-size: 18px;
+				margin-bottom: 10px;
+			}
+			.hidden{
+				/*visibility: hidden;*/
+				display: none;
+				font-family: consolas;
+				padding-left: 20px;
+			}
+		</style>
+	</head>
+		<body>
+		<div class="banner">
+			<div class="logo">
+				<img src="assets\logo\Smooth Typing Logo 3 Orange.jpg" alt="Smooth Typing Logo" width="150">
+			</div>
+		</div>
+		<div class="navbar">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="">Lessons</a></li>
+				<li><a href="test.html">Test</a></li>
+				<li><a href="submit.html">Submit</a></li>
+				<li><a href="">Practice</a></li>
+				<li><a href="">About</a></li>
+			</ul>
+		</div>
+		<div class="main-content">
+			<h2>Customize Your Test</h2>
+			<div id="words">
+				<p id="heading">Words to Include:</p>
+				<input type="checkbox" name="easy" id="easy">Easy Words<br>
+				<input type="checkbox" name="intermed" id="intermed">Intermediate Words<br>
+				<input type="checkbox" name="hard" id="hard">Hard Words<br>
+				<!--I suppose it would be nice to have other options as far as lists of words go-->
+				<!--User should be able to upload a personal list of words
+					Or possibly be able to apply certain modifiers to a passage-->
+			</div>
+			<div>
+				<p id="heading">Other Characters:</p>
+				<input type="checkbox" onchange="showNumbers()" id="numbers">Numbers
+				<div id="numbers-list" class="hidden">
+					<input type="checkbox" checked>1
+					<input type="checkbox" checked>2
+					<input type="checkbox" checked>3
+					<input type="checkbox" checked>4
+					<input type="checkbox" checked>5
+					<input type="checkbox" checked>6
+					<input type="checkbox" checked>7
+					<input type="checkbox" checked>8
+					<input type="checkbox" checked>9
+					<input type="checkbox" checked>0
+				</div>
+				<div><input type="checkbox" onchange="showSpecNumChars()" id="spec-numbers-chars">Number Row Special Characters</div>
+				<span id="spec-numbers-list" class="hidden">
+					<input type="checkbox" checked>!
+					<input type="checkbox" checked>@
+					<input type="checkbox" checked>#
+					<input type="checkbox" checked>$
+					<input type="checkbox" checked>%
+					<input type="checkbox" checked>^
+					<input type="checkbox" checked>&
+					<input type="checkbox" checked>*
+					<input type="checkbox" checked>(
+					<input type="checkbox" checked>)
+				</span>
+				<div><input type="checkbox" onchange="showCommonPunct()" id="common-punct">Common Punctuation</div>
+				<span id="common-punct-list" class="hidden">
+					<input type="checkbox" checked>,
+					<input type="checkbox" checked>.
+					<input type="checkbox" checked>"
+					<input type="checkbox" checked>'
+					<input type="checkbox" checked>-
+					<input type="checkbox" checked>;
+					<input type="checkbox" checked>:
+					<input type="checkbox" checked>?
+				</span>
+				<div><input type="checkbox" onchange="showOtherChars()" id="other-chars">Other Characters</div>
+				<span id="other-chars-list" class="hidden">
+					<input type="checkbox" checked>_
+					<input type="checkbox" checked>+
+					<input type="checkbox" checked>=
+					<input type="checkbox" checked>{
+					<input type="checkbox" checked>}
+					<input type="checkbox" checked>[
+					<input type="checkbox" checked>]
+					<input type="checkbox" checked>\
+					<input type="checkbox" checked>|
+					<input type="checkbox" checked><
+					<input type="checkbox" checked>>
+					<input type="checkbox" checked>/
+				</span>
+			</div>
+			<input type="button" onclick="testPrefs()" value="Submit">
+		</div>
+	</body>
+	<script>
+		//This function is going to be so much more elaborate
+		var testPrefs = function(){
+			if(document.getElementById("easy").checked){
+				console.log("Easy Checked");
+			}
+		}
+		var showNumbers = function(){
+			var numbersEl = document.getElementById("numbers-list");
+			var checked = document.getElementById("numbers").checked;
+			
+			if(checked){
+				numbersEl.style.display = "block";
+			}else{
+				numbersEl.style.display = "none";
+			}
+		}
+		var showSpecNumChars = function(){
+			var specNumbersEl = document.getElementById("spec-numbers-list")
+			var checked = document.getElementById("spec-numbers-chars").checked;
+			
+			if(checked){
+				specNumbersEl.style.display = "block";
+			}else{
+				specNumbersEl.style.display = "none";
+			}
+		}
+		var showCommonPunct = function(){
+			var commonPunctEl = document.getElementById("common-punct-list")
+			var checked = document.getElementById("common-punct").checked;
+			
+			if(checked){
+				commonPunctEl.style.display = "block";
+			}else{
+				commonPunctEl.style.display = "none";
+			}
+		}
+		var showOtherChars = function(){
+			var otherCharsEl = document.getElementById("other-chars-list")
+			var checked = document.getElementById("other-chars").checked;
+			
+			if(checked){
+				otherCharsEl.style.display = "block";
+			}else{
+				otherCharsEl.style.display = "none";
+			}
+		}
+	</script>
+</html>

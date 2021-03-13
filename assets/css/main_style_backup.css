@@ -1,0 +1,82 @@
+html, body{
+	width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+	background-color: #B9DEEB ;
+}
+.banner{
+	width: 100%;
+	height: 100px;
+	background-color: orange;
+	margin: 0;
+	overflow: hidden;
+}
+.logo{
+	position: relative;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 750px;
+}
+.navbar{
+	background-color: #428FA8;
+	margin-top: -16px;
+	width: 100%;
+	
+	position: relative;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	
+	font-family: "Raleway","HelveticaNeue","Helvetica Neue",sans-serif;
+	/*border: 1px solid black;*/
+}
+.navbar ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	text-align: center;
+}
+
+.navbar ul li{
+	display: inline-block;
+	text-align: center;
+}
+.navbar ul li a{
+	text-decoration: none;
+	display: block;
+	
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-right: 30px;
+	padding-left: 30px;
+	
+	/*border-radius: 5px;*/
+	
+	color: white;
+	
+	/*font-size: 20px;*/
+	background-color: #428FA8;
+}
+.navbar ul li a:hover{
+	background-color: #32C4CF;
+	border-radius: 2px;
+}
+.page{
+	width: 100%;
+	background-color: #B9DEEB;
+}
+.main-content{
+	width: 750px;
+	background-color: white;
+	
+	overflow: hidden;
+	position: relative;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}

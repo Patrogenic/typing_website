@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Submit Text to Type - Smooth Typing</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="assets/css/main_style.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/typing_style.css">
+		<style>
+			/*Should import to a seperate file*/
+			#empty{
+				visibility: hidden;
+				color: red;
+				text-align: center;
+			}
+			#submit{
+				position: absolute;
+				
+			}
+			#submitBtn{
+				background-color: orange;
+				width: 150px;
+				line-height: 30px; /*Assists in centering the text*/
+				margin: 0 auto;
+				margin-top: 5px;
+				border-radius: 5px;
+				text-align: center;
+			}
+			#submitBtn > *{
+				vertical-align: middle;
+			}
+			#submitBtn:hover{
+				cursor: pointer;
+			}
+			.text-container{
+				z-index: -1;
+			}
+			#textInput{
+				overflow: auto;
+				height: 125px;
+				width: 525px;
+				font-size: 16px;
+				
+				resize: none;
+				font-family: 'Times New Roman', Times, serif;
+				margin: 0 109px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="banner">
+			<div class="logo">
+				<img src="assets\logo\Smooth Typing Logo 3 Orange.jpg" alt="Smooth Typing Logo" width="150">
+			</div>
+		</div>
+		<!--Navigation Bar-->
+		<div class="navbar">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="">Lessons</a></li>
+				<li><a href="test.html">Test</a></li>
+				<li><a href="submit.html">Submit</a></li>
+				<li><a href="">Practice</a></li>
+				<li><a href="">About</a></li>
+			</ul>
+		</div>
+		<!--Main Content-->
+		<div class="main-content">
+			<!--User submits text-->
+			<!-- http://stackoverflow.com/questions/10950538/how-to-detect-line-breaks-in-a-text-area-input 
+				javascript how do i detect a new line in a textarea-->
+			<div id="submit">
+				<h1 style="text-align: center;">Submit Text to Type</h1>
+				<textarea type="text" id="textInput" placeholder="Enter a text here to type" rows="5" cols="75"></textarea>
+				<div id="submitBtn" onclick="submitBtn()">
+					<span>Submit</span>
+				</div>
+				<p id="empty">Text field is empty.</p>
+			</div>
+			<!--Typing Test-->
+			<div class="text-container" id="textContainer" onkeydown="userTyping">
+				<div class="sub-text-container">
+					<span id="textTyped" class="typed"></span><!--
+				--><span id="currentChar" class="current"></span><!--
+				--><span id="textToType">Egocentric: self-centered,</span>
+				</div>
+			</div>
+			<!--Typing Test Finish Screen-->
+			<div id="finish" class="finish">
+				<p id="fin-heading">Finish!</p>
+				<!--Smooth -Earn Smoothies for accuracy? -May as well as have a smoothie logo? -->
+				<div class="results-container">
+					<span id="time" class="results">Time: 4 sec</span>
+					<span id="accuracy" class="results">Accuracy: 100% </span>
+					<span id="wpm" class="results">Speed: 71wpm</span>
+				</div>
+				<hr>
+				<div class="options" onclick="displaySubmitEl()">
+					<span>&ltcc; Submit</span>
+				</div>
+				<div class="options" onclick="retry()">
+					<span>Retry?</span>
+				</div>
+				<div class="options">
+					<span>Next(TODO) &gtcc;<span>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script language="javascript" type="text/javascript" src="assets/js/typing_logic.js"></script>
+	<script>
+		var submitBtn = function(){
+			var textInput = document.getElementById("textInput")
+			if(textInput.value == ""){
+				document.getElementById("empty").style.visibility = "visible";
+				console.log("Field is empty")
+			}else{
+				document.getElementById("textTyped").textContent = "";
+				passage = textInput.value;
+				text.textContent = passage;
+				
+				length = passage.length;
+				lastChar = passage.substring(length - 1, length);
+				
+				document.getElementById("currentChar").textContent = passage.charAt(0)
+				text.textContent = passage.substring(1, length)
+				
+				document.addEventListener("keydown", userTyping);
+				
+				textInput.value = "";
+				
+				document.getElementById("submit").style.zIndex = -1;
+				document.getElementById("textContainer").style.zIndex = 1;
+				startTiming = true;
+			}
+		}
+		var displaySubmitEl = function(){
+			document.getElementById("submit").style.zIndex = 1;
+			document.getElementById("textContainer").style.zIndex = -1;
+			document.getElementById("finish").style.zIndex = -1;
+		}
+	</script>
+</html>
